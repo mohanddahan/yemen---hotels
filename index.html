@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حجز الفنادق اليمني</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏨 نظام حجز الفنادق اليمني</h1>
+
+        <!-- خطوات النظام -->
+        <div class="step active" id="step1">
+            <h2>📍 اختر المحافظة:</h2>
+            <div class="grid" id="governorates"></div>
+        </div>
+
+        <div class="step" id="step2">
+            <button class="back-btn" onclick="showStep('step1')">↩ العودة</button>
+            <h2>🏙️ اختر المنطقة:</h2>
+            <div class="grid" id="regions"></div>
+        </div>
+
+        <div class="step" id="step3">
+            <button class="back-btn" onclick="showStep('step2')">↩ العودة</button>
+            <h2>🏨 الفنادق المتاحة:</h2>
+            <div class="grid" id="hotels"></div>
+        </div>
+
+        <div class="step" id="step4">
+            <button class="back-btn" onclick="showStep('step3')">↩ العودة</button>
+            <h2>🛏️ الغرف المتاحة:</h2>
+            <div class="rooms-container" id="rooms"></div>
+        </div>
+
+        <div class="step" id="step5">
+            <button class="back-btn" onclick="showStep('step4')">↩ العودة</button>
+            <h2>📝 إتمام الحجز</h2>
+            <form class="booking-form" id="bookingForm">
+                <input type="text" placeholder="الاسم الثلاثي" required>
+                <input type="tel" placeholder="رقم الهاتف (9 أرقام)" pattern="[0-9]{9}" required>
+                <input type="email" placeholder="البريد الإلكتروني">
+                <input type="number" placeholder="عدد الأشخاص" min="1" required>
+                <textarea placeholder="ملاحظات خاصة" rows="3"></textarea>
+                <button type="submit">✅ تأكيد الحجز</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
